@@ -2,4 +2,9 @@ flask
 sqlalchemy
 plotly
 joblib
-seaborn
+seaborn 
+librosa
+PyAudio
+pandas
+numpy
+wave

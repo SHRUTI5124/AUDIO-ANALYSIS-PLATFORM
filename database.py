@@ -1,21 +1,21 @@
-from sqlalchemy.engine import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy import create_engine
 from datetime import datetime
 
-
 Base = declarative_base()
-class Feedback(Base):
-    __tablename__ = 'feedback'
+
+class audio(Base):
+    __tablename__ = 'audio'
     id = Column(Integer, primary_key=True)
-    name = Column(String(50))
-    email = Column(String(64))
-    message = Column(String(256))
-    created_on = Column(DateTime, default=datetime.now)
+    name = Column(String(250), nullable=False)
+    audio_file = Column(String(250), nullable=False)
+    date = Column(DateTime, default=datetime.utcnow)
 
     def __str__(self):
-        return f'Feedback : {self.name}'
+        return self.name
     
-if __name__=='__main__':
-    engine = create_engine('sqlite:///app.sqlite', echo=True)
+
+if __name__ == '__main__':
+    engine = create_engine('sqlite:///project.sqlite')
     Base.metadata.create_all(engine)

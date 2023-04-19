@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | AudioAnalysis</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">
+          <img src="logo.png" alt="AudioAnalysis logo">
+        </a>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <h1>Join AudioAnalysis</h1>
+        <p>Get started today and unlock the full potential of your audio content.</p>
+      </section>
+      <section class="form">
+        <form>
+          <h2>Create Your Account</h2>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+          </div>
+          <div class="form-group">
+            <label for="organization">Organization Name</label>
+            <input type="text" id="organization" name="organization">
+          </div>
+          <div class="form-group">
+            <label for="industry">Industry</label>
+            <select id="industry" name="industry">
+              <option value="" disabled selected>Select your industry</option>
+              <option value="music">Music</option>
+              <option value="podcasting">Podcasting</option>
+              <option value="broadcasting">Broadcasting</option>
+              <option value="telecommunications">Telecommunications</option>
+              <option value="education">Education</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <button type="submit">Create Account</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 AudioAnalysis. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

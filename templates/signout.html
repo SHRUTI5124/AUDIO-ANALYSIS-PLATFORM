@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sign Out Page</title>
+    <style>
+      /* CSS for the sign out form */
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      input[type="submit"] {
+        padding: 0.5rem 1rem;
+        margin-top: 1rem;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        font-size: 7 rem;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #02bb12;
+      }
+      /* CSS for the page header */
+      header {
+        background-color: #3abcf8;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+      }
+      h1 {
+        font-size: 2rem;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Sign Out Page</h1>
+    </header>
+    <form action="logout.php" method="POST">
+      <p>Are you sure 😢 you want to sign out?🙄</p>
+      <input type="submit" value="Sign Out">
+    </form>
+  </body>
+</html>

@@ -2,7 +2,7 @@ import librosa
 import numpy as np
 
 # load the audio file
-filename = 'example.wav'
+filename = 'horror-hit-logo-142395.mp3.wav'
 y, sr = librosa.load(filename)
 
 # calculate the energy envelope of the audio waveform

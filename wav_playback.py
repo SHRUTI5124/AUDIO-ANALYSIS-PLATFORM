@@ -1,8 +1,10 @@
 import pyaudio
 import wave
+import time
 
-# set up the audio file
-filename = 'horror-hit-logo-142395.mp3.wav'
+
+# set up the audio filewa
+filename = r'static\audios\CantinaBand3.wav'
 chunk = 1024
 
 # open the file and create a PyAudio instance

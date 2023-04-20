@@ -8,3 +8,4 @@ PyAudio
 pandas
 numpy
 wave
+speech_recognition

@@ -1,10 +1,9 @@
-
 # import required modules
 from os import path
 from pydub import AudioSegment
   
 # assign files
-input_file = r"static\audio\3 Peg-Label Black.mp3"
+input_file = r"static\audios\3 Peg-Label Black.mp3"
 output_file = "result.wav"
   
 # convert mp3 file to wav file

@@ -4,7 +4,7 @@ import time
 
 
 # set up the audio filewa
-filename = r'static\audios\CantinaBand3.wav'
+filename = r"result.wav"
 chunk = 1024
 
 # open the file and create a PyAudio instance

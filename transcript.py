@@ -1,15 +1,16 @@
 import speech_recognition as sr
 
+def transcript():
 # Initialize a recognizer instance
-r = sr.Recognizer()
+    r = sr.Recognizer()
 
-# Load the audio file
-audio_file = sr.AudioFile('C:\Users\hp\OneDrive\Documents\web_app1\static\images\audios\02 Zaalima - Raees (Arijit Singh) 190kbps.wav')
+    # Load the audio file
+    audio_file = sr.AudioFile(r'static\audios\CantinaBand3.wav')
 
-# Use the recognizer to transcribe the audio file
-with audio_file as source:
-    audio = r.record(source)
+    # Use the recognizer to transcribe the audio file
+    with audio_file as source:
+        audio = r.record(source)
 
-text = r.recognize_google(audio)
+    text = r.recognize_google(audio)
 
-print(text)
+    print(text)

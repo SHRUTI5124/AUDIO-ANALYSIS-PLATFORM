@@ -8,3 +8,7 @@ PyAudio
 pandas
 numpy
 wave
+pillow
+keras
+ntlk
+tensorflow

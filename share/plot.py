@@ -1,8 +1,9 @@
 import matplotlib.pyplot as plt
 import librosa
+import numpy as np
 
 # load the audio file and compute the spectrogram
-filename = 'example.wav'
+filename = r'static\audios\CantinaBand3.wav'
 y, sr = librosa.load(filename)
 spec = librosa.feature.melspectrogram(y=y, sr=sr)
 

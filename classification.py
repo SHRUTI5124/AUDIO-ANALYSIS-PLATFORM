@@ -12,8 +12,8 @@ def classifications():            # Load the audio files and extract features
     moods = []
     for file_path in [r'static\audios\CantinaBand3.wav']:
         audio_files.append(librosa.load(file_path, duration=30)[0])
-        genre = file_path.split('\'[-2])
-        mood = file_path.split('\')[-1].split('_')[0]
+        genre = file_path.split('\\')[-2]
+        mood = file_path.split('\\')[-1].split('_')[0]
         genres.append(genre)
         moods.append(mood)
 
@@ -31,7 +31,7 @@ def classifications():            # Load the audio files and extract features
 
     # Scale the features
     scaler = StandardScaler()
-scaled_features = scaler.fit_transform(np.array(features))
+    scaled_features = scaler.fit_transform(np.array(features))
 
     # Split the data into training and testing sets
     X_train, X_test, y_train, y_test = train_test_split(scaled_features, genre_labels, test_size=0.2)

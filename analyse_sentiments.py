@@ -39,3 +39,6 @@ def analyze_sentiment():                  # to analyze the sentiment emotions of
     # Print the sentiment and emotion
     print('Sentiment:', sentiment_scores)
     print('Emotion:', emotion)
+
+if __name__=='__main__':
+    analyze_sentiment() 

@@ -14,3 +14,6 @@ def transcript():
     text = r.recognize_google(audio)
 
     print(text)
+
+if __name__=='__main__':
+    transcript()

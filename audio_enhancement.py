@@ -36,3 +36,6 @@ def audio_enhancement():         #to enhance the audio quality
     # Write the enhanced audio to file
     enhanced_file = 'path/to/enhanced_audio.wav'
     librosa.output.write_wav(enhanced_file, y, sr)
+
+if __name__=='__main__':
+    audio_enhancement()

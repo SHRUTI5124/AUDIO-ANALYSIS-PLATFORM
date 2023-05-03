@@ -10,5 +10,7 @@ numpy
 wave
 pillow
 keras
-ntlk
+nltk
 tensorflow
+pydub
+speechrecognition

@@ -14,3 +14,6 @@ def similar_search():         # Extract features from the audio files
     similarity = np.dot(features1.T, features2) / np.linalg.norm(features1) / np.linalg.norm(features2)
 
     print('Similarity between the two audio files: ', similarity)
+
+if __name__=='__main__':
+    similar_search()

@@ -7,6 +7,10 @@ def playback():                                             # set up the audio f
     filename = r'static\audios\CantinaBand3.wav'
     chunk = 1024
 
+# set up the audio filewa
+    filename = r"result.wav"
+    chunk = 1024
+
     # open the file and create a PyAudio instance
     wf = wave.open(filename, 'rb')
     p = pyaudio.PyAudio()
@@ -34,3 +38,6 @@ def playback():                                             # set up the audio f
     stream.close()
     wf.close()
     p.terminate()
+
+if __name__ == "__main__":
+    playback() 

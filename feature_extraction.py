@@ -19,4 +19,5 @@ def feature_extraction():                    # Estimate the pitch
     print('Melody:', melody)
 
     
-
+if __name__=='__main__':
+    feature_extraction()

@@ -16,8 +16,12 @@ def feature_extraction():                    # Estimate the pitch
 
     # Extract the melody
     melody = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=12)
+<<<<<<< HEAD
     print('Melody:', melody)
 
     
 if __name__=='__main__':
     feature_extraction()
+=======
+    print('Melody:',melody)
+>>>>>>> f0fc8b471be77c76969d6121908ec975e8fdc59a

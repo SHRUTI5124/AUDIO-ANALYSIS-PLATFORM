@@ -32,7 +32,6 @@ def extract():
     sns.barplot(x=np.arange(1, 21), y=mfccs_mean, ax=axs[2])
     plt.savefig('static\images\mfccs.png', bbox_inches='tight')
 
-
     # plot line graph
     fig, axs = plt.subplots(3, 1, figsize=(15, 10))
     sns.lineplot(x=np.arange(1, 21), y=mfccs_mean, ax=axs[0],)
@@ -55,4 +54,4 @@ def plotly_spectrogram(mfccs , contrast , chroma):                   #plot spect
 extract()
 mfccs , contrast, chroma = extract()
 spectrogram(mfccs , contrast, chroma)
-plotly_spectrogram(mfccs , contrast, chroma)
+plotly_spectrogram(mfccs , contrast,chroma)

@@ -1,4 +1,3 @@
-# import required modules
 from os import path
 from pydub import AudioSegment
 
@@ -28,3 +27,13 @@ def convert_to_wav(input_file, output_file):
     
     print(f"Successfully converted '{input_file}' to '{output_file}'.")
     return True
+
+input_file = r"static\audios\3 Peg-Label Black.mp3"
+output_file = "result.wav"
+
+result = convert_to_wav(input_file, output_file)
+
+if result:
+    print("Conversion was successful!")
+else:
+    print("Conversion failed.")

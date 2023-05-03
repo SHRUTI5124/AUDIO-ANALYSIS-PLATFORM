@@ -1,19 +1,12 @@
-import speech_recognition as sr
+import pvleopard
 
-def transcript():
-# Initialize a recognizer instance
-    r = sr.Recognizer()
+access_key = 'fHmV8BUYf1JCPxJ/W+JKDL+4KvlYafOtLTmRoQdP91Fb/dpEz4ZkPQ=='
+def transcript(audio_path):
+    handle = pvleopard.create(access_key)
+    transcript, words = handle.process_file(audio_path)
+    return transcript, words
 
-    # Load the audio file
-    audio_file = sr.AudioFile(r'static\audios\CantinaBand3.wav')
-
-    # Use the recognizer to transcribe the audio file
-    with audio_file as source:
-        audio = r.record(source)
-
-    text = r.recognize_google(audio)
-
-    print(text)
 
 if __name__=='__main__':
-    transcript()
+    text,words = transcript(r'static\audios\recording.m4a')
+    print(text)

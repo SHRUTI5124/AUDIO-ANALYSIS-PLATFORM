@@ -10,12 +10,13 @@ def classifications():            # Load the audio files and extract features
     audio_files = []
     genres = []
     moods = []
-    for file_path in [r'result.wav']:
-        audio_files.append(librosa.load(file_path, duration=30)[0])
-        genre = file_path.split('\\')[-2]
-        mood = file_path.split('\\')[-1].split('_')[0]
-        genres.append(genre)
-        moods.append(mood)
+    for file_path in [r'static\audios\sunrise-anna-li-sky-wav-8476.mp3']:
+        for file_path in [r'result.wav']:
+            audio_files.append(librosa.load(file_path, duration=30)[0])
+            genre = file_path.split('\\')[-2]
+            mood = file_path.split('\\')[-1].split('_')[0]
+            genres.append(genre)
+            moods.append(mood)
 
     features = []
     for audio_file in audio_files:

@@ -1,7 +1,7 @@
 from os import path
 from pydub import AudioSegment
 
-def convert_to_wav(input_file, output_file):
+def convert_to_wav(input_file, output_file, fr=16000, ch=1):
     """
     Converts an audio file to WAV format using pydub library.
     :param input_file: Path to the input audio file.
@@ -18,8 +18,10 @@ def convert_to_wav(input_file, output_file):
         print(f"Warning: File '{output_file}' already exists and will be overwritten.")
     
     try:
-        # Convert the file to WAV format
+        # Convert the file to WAV format of 16000
         sound = AudioSegment.from_file(input_file)
+        sound = sound.set_frame_rate(fr)
+        sound = sound.set_channels(ch)
         sound.export(output_file, format="wav")
     except Exception as e:
         print(f"Error: {e}")
@@ -28,8 +30,8 @@ def convert_to_wav(input_file, output_file):
     print(f"Successfully converted '{input_file}' to '{output_file}'.")
     return True
 
-input_file = r"static\audios\3 Peg-Label Black.mp3"
-output_file = "result.wav"
+input_file = r"C:\Users\hp\OneDrive\Documents\web_app1\static\audios\Recording.m4a"
+output_file = "recording.wav"
 
 result = convert_to_wav(input_file, output_file)
 

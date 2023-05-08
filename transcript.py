@@ -1,5 +1,5 @@
 from leopard import Leopard 
-from cheetah import Transcriber
+from pvcheetah import Transcriber
 
 def transcribe_audio(file_path):
     # Create a new Leopard or Cheetah instance
@@ -12,7 +12,7 @@ def transcribe_audio(file_path):
         
     # Transcribe the audio
     transcription = Leopard.transcribe(audio_data)
-    transcription = cheetah.transcribe(audio_data)
+    transcription = pvcheetah.transcribe(audio_data) 
     
     # Return the transcription
     return transcription

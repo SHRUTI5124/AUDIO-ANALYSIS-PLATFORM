@@ -13,4 +13,4 @@ keras
 nltk
 tensorflow
 pydub
-speechrecognition
+leopard

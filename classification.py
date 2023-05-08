@@ -65,12 +65,7 @@ def classifications():            # Load the audio files and extract features
     predicted_mood = mood_encoder.inverse_transform(model.predict_classes(new_scaled_feature))
 
     print('Predicted genre:', predicted_genre[0])
-<<<<<<< HEAD
     print('Predicted mood:', predicted_mood[0])
 
 if __name__=='__main__':
     classifications()
-
-=======
-    print('Predicted mood:', predicted_mood[0])
->>>>>>> f0fc8b471be77c76969d6121908ec975e8fdc59a

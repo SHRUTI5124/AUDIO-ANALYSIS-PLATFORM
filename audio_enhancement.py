@@ -4,7 +4,7 @@ import numpy as np
 import scipy.signal
 
 # Load the audio file
-audio_file = r'static\audios\CantinaBand3.wav'
+audio_file = r'static\audios\Recording.m4a'
 y, sr = librosa.load(audio_file)
 
 def audio_enhancement():         #to enhance the audio quality

@@ -8,7 +8,7 @@ import nltk
 from nltk.sentiment import SentimentIntensityAnalyzer
 
 # Load the audio file
-audio_file = r'static\audios\CantinaBand3.wav'
+audio_file = r'static\audios\Recording.m4a'
 
 def analyze_sentiment():                  # to analyze the sentiment emotions of audio
     r = sr.Recognizer()

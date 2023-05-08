@@ -1,4 +1,5 @@
 import pvkoala
+from file_conversion import convert_to_wav
 
 def noise_reduction(audio):
 
@@ -17,9 +18,9 @@ def noise_reduction(audio):
 if __name__ == '__main__':
     # mp3 to wav
     fp = r'static\audios\relaxing-145038.mp3'
-    ep = conversion(fp, export_path='output_file.wav', export_format='wav')
+    ep = convert_to_wav(fp, export_path='output_file.wav', export_format='wav')
     print(ep)
 
     # wav to mp3
     fp = r'static\audios\CantinaBand3.wav'
-    ep = conversion(fp, export_path='output_file.mp3', export_format='mp3')
+    ep = convert_to_wav(fp, export_path='output_file.mp3', export_format='mp3')

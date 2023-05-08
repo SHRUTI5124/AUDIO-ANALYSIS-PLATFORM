@@ -37,3 +37,6 @@ if result:
     print("Conversion was successful!")
 else:
     print("Conversion failed.")
+
+if __name__=='__main__':
+    convert_to_wav(input_file, output_file)

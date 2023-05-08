@@ -43,3 +43,6 @@ def segmentation():          # calculate the energy envelope of the audio wavefo
     # print the results
     for section in sections:
         print(section[0],section[1])
+        
+if __name__ == "__main__":
+    segmentation()                

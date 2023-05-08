@@ -23,4 +23,10 @@ def graph():              # Generate a sine wave with a frequency of 440 Hz and 
     plt.title('Spectrogram of Audio Signal')
     plt.tight_layout()
     plt.show()
+<<<<<<< Updated upstream:graph1.py
     
+=======
+    
+if __name__ == "__main__":
+    graph()    
+>>>>>>> Stashed changes:graph.py

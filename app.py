@@ -4,6 +4,7 @@ from database import audio
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 from werkzeug.utils import secure_filename
+from extract import extract, spectrogram, plotly_spectrogram
 
 app = Flask(__name__)
 

@@ -2,7 +2,7 @@ import pandas as pd
 import librosa
 
 # load the audio file and compute the tempo and beats
-filename = 'example.wav'
+filename = r'static\audios\CantinaBand3.wav'
 y, sr = librosa.load(filename)
 tempo, beats = librosa.beat.beat_track(y=y, sr=sr)
 

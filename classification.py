@@ -10,7 +10,7 @@ def classifications():            # Load the audio files and extract features
     audio_files = []
     genres = []
     moods = []
-    for file_path in [r'static\audios\CantinaBand3.wav']:
+    for file_path in [r'result.wav']:
         audio_files.append(librosa.load(file_path, duration=30)[0])
         genre = file_path.split('\\')[-2]
         mood = file_path.split('\\')[-1].split('_')[0]
@@ -66,3 +66,6 @@ def classifications():            # Load the audio files and extract features
 
     print('Predicted genre:', predicted_genre[0])
     print('Predicted mood:', predicted_mood[0])
+
+if __name__=='__main__':
+    classifications()

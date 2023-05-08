@@ -8,4 +8,9 @@ PyAudio
 pandas
 numpy
 wave
-speechrecognition
+pillow
+keras
+nltk
+tensorflow
+pydub
+leopard

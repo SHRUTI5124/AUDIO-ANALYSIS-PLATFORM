@@ -34,5 +34,5 @@ def transcript(wav_path):
 
 
 if __name__ == "__main__":
-    result = transcript(r'C:\Users\hp\OneDrive\Documents\web_app1\recording.wav')
+    result = transcript(r'recording.wav')
     print(result)

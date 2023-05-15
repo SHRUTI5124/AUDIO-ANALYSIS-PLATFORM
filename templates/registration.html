@@ -1,65 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register | AudioAnalysis</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Registeration</title>
+    <link rel="stylesheet" href="style3.css">
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="/">
-          <img src="logo.png" alt="AudioAnalysis logo">
-        </a>
-      </nav>
-    </header>
-    <main>
-      <section class="hero">
-        <h1>Join AudioAnalysis</h1>
-        <p>Get started today and unlock the full potential of your audio content.</p>
-      </section>
-      <section class="form">
-        <form>
-          <h2>Create Your Account</h2>
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required>
+    <div class="hero">
+        <div class="form-box">
+          <div class="button-box">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+            <button type="button" class="toggle-btn" onclick="register()">Register</button>
           </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-          </div>
-          <div class="form-group">
-            <label for="confirm-password">Confirm Password</label>
-            <input type="password" id="confirm-password" name="confirm-password" required>
-          </div>
-          <div class="form-group">
-            <label for="organization">Organization Name</label>
-            <input type="text" id="organization" name="organization">
-          </div>
-          <div class="form-group">
-            <label for="industry">Industry</label>
-            <select id="industry" name="industry">
-              <option value="" disabled selected>Select your industry</option>
-              <option value="music">Music</option>
-              <option value="podcasting">Podcasting</option>
-              <option value="broadcasting">Broadcasting</option>
-              <option value="telecommunications">Telecommunications</option>
-              <option value="education">Education</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          <button type="submit">Create Account</button>
+          <div class="social-icons">
+            <img src="fb.png">
+            <img src="gp.png">
+            <img src="tw.png">
+        </div>
+        <form id="login" class="input-group">
+          <input type="text" class="input-field" placeholder="User Id" required>
+          <input type="text" class="input-field" placeholder="Password" required>
+          <input type="checkbox" class="check-box"><span>Remember Password</span>
+          <button type="submit" class="submit-btn">Log In</button>
         </form>
-      </section>
-    </main>
-    <footer>
-      <p>&copy; 2023 AudioAnalysis. All rights reserved.</p>
-    </footer>
+        <form id="register" class="input-group">
+          <input type="text" class="input-field" placeholder="User Id" required>
+          <input type="email" class="input-field" placeholder="Email Id" required>
+          <input type="text" class="input-field" placeholder="Password" required>
+          <input type="checkbox" class="check-box"><span>I agree to the terms & condtions</span>
+          <button type="submit" class="submit-btn">Register</button>
+        </form>
+        </div>
+    </div>
+    <script>
+      var x=document.getElementById("login");
+      var y=document.getElementById("register");
+      var z=document.getElementById("btn");
+      function register(){
+        x.style.left="-400px";
+        y.style.left="50px";
+        z.style.left="110px";
+      }
+      function login(){
+        x.style.left="50px";
+        y.style.left="450px";
+        z.style.left="0";
+      }
+    </script>
   </body>
 </html>

@@ -25,15 +25,18 @@ def getdb():
     session = scoped_session(DBSession)
     return session
 
+# home page
 @app.route('/')
 def home():
     name = "AUDIO ANALYSIS PLATFORM"
     return render_template('index.html', title=name)
 
+# about page
 @app.route('/about')
 def about():
     return render_template('About1.html')
 
+# upload audio
 @app.route('/audio/add', methods=['GET', 'POST'])
 def add_audio():
     if request.method == 'POST':
@@ -62,6 +65,7 @@ def add_audio():
 
     return render_template('fileupload.html')
 
+# dashboard
 @app.route('/dashboard')
 def dashboard():
     db = getdb()
@@ -69,6 +73,7 @@ def dashboard():
     db.close()
     return render_template('dashboard.html', audios=audios, title='Dashboard')
 
+# operations into the applications
 @app.route('/audio/operations/<int:id>', methods=['GET', 'POST'])
 def operations(id):
     db = getdb()

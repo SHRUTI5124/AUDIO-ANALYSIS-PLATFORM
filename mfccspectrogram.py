@@ -4,10 +4,14 @@ import seaborn as sns
 import plotly.express as px
 import matplotlib.pyplot as plt
 
+import librosa
+import numpy as np
+import seaborn as sns
+import plotly.express as px
+import matplotlib.pyplot as plt
 
-def extract():
+def extract(filename = r'static\audios\CantinaBand3.wav'):
     # load the audio file
-    filename = r'static\audios\CantinaBand3.wav'
     y, sr = librosa.load(filename)
 
     # extract MFCCs
@@ -26,35 +30,41 @@ def extract():
     chroma_std = np.std(chroma, axis=1)
 
     # plot the features
-    fig, axs = plt.subplots(3, 1, figsize=(15, 10))
-    sns.barplot(x=np.arange(1, 21), y=mfccs_mean, ax=axs[0],)
-    sns.barplot(x=np.arange(1, 21), y=mfccs_std, ax=axs[1]) 
-    sns.barplot(x=np.arange(1, 21), y=mfccs_mean, ax=axs[2])
-    plt.savefig('static\images\mfccs.png', bbox_inches='tight')
+    fig0 = px.line(y=mfccs_mean, title=f'MFCCs for {filename}' )
+    for i in range(mfccs.shape[1]):
+        fig0.add_scatter(y=mfccs[:, i], mode='lines', name=f'MFCC {i+1}') 
+    # contrast
+    fig1 = px.area(y=contrast_mean, title=f'Spectral contrast for {filename}',
+               text=contrast_mean.astype(int), range_y=[0, contrast.max()],
+               range_x=[-1, contrast.shape[0]], labels=dict(x="Time frame", y="Spectral contrast"))
+    
+    # chroma
+    fig2 = px.line(y=chroma_mean, title=f'Chroma for {filename}' )
+    for i in range(chroma.shape[1]):
+        fig2.add_scatter(y=chroma[:, i], mode='lines', name=f'Chroma {i+1}', 
+                        line=dict(color='rgba(255,0,255,0.5)', width=0.5, dash='dot'))
+  
+    return {
+        'mfccs': mfccs,
+        'contrast': contrast,
+        'chroma': chroma,
+        'mfcc_graph': fig0,
+        'contrast_graph': fig1,
+        'chroma_graph': fig2
+    }
 
-    # plot line graph
-    fig, axs = plt.subplots(3, 1, figsize=(15, 10))
-    sns.lineplot(x=np.arange(1, 21), y=mfccs_mean, ax=axs[0],)
-    sns.lineplot(x=np.arange(1, 21), y=mfccs_std, ax=axs[1])
-    sns.lineplot(x=np.arange(1, 21), y=mfccs_mean, ax=axs[2])
-    plt.savefig('static\images\mfccs_line.png', bbox_inches='tight')
-    return mfccs , contrast, chroma
 
-def spectrogram(mfccs , contrast , chroma):                          #plot spectrogram
-    fig, axs = plt.subplots(3, 1, figsize=(15, 10))
-    sns.heatmap(mfccs, ax=axs[0])
-    sns.heatmap(contrast, ax=axs[1])
-    sns.heatmap(chroma, ax=axs[2])
-    plt.savefig('static\images\mfccs_heatmap.png', bbox_inches='tight')
+# def spectrogram(mfccs , contrast , chroma):                          #plot spectrogram
+#     fig, axs = plt.subplots(3, 1, figsize=(15, 10))
+#     sns.heatmap(mfccs, ax=axs[0])
+#     sns.heatmap(contrast, ax=axs[1])
+#     sns.heatmap(chroma, ax=axs[2])
+#     plt.savefig('static\images\mfccs_heatmap.png', bbox_inches='tight')
 
-def plotly_spectrogram(mfccs , contrast , chroma):                   #plot spectrogram using plotly
-    fig = px.imshow(mfccs)
+def spectrogram(mfccs):                   #plot spectrogram using plotly
+    fig = px.imshow(result['mfccs'], zmin=-100, zmax=200, origin='lower', aspect='auto', color_continuous_midpoint=0)
     fig.show()
 
-extract()
-mfccs , contrast, chroma = extract()
-spectrogram(mfccs , contrast, chroma)
-plotly_spectrogram(mfccs , contrast,chroma)
-
 if __name__ == "__main__":
-    extract()
+    result = extract()
+    fig_spectrogram = spectrogram(result['mfccs'])

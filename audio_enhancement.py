@@ -32,7 +32,8 @@ def audio_enhancement(audio_file = r'static\audios\Recording.m4a'):         #to 
     # y = librosa.effects.reduce_noise(y)
 
     # Write the enhanced audio to file
-    enhanced_file = 'enhanced_audio.wav'
+    enhanced_file = f'{audio_file[:-4]}_enhanced.wav'
     sf.write(enhanced_file, y, sr, subtype='PCM_24')
+    return enhanced_file
 if __name__=='__main__':
-    audio_enhancement()
+    print(audio_enhancement())

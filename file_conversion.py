@@ -30,15 +30,15 @@ def convert_to_wav(input_file, output_file, fr=16000, ch=1):
     print(f"Successfully converted '{input_file}' to '{output_file}'.")
     return True
 
-input_file = r"C:\Users\hp\OneDrive\Documents\web_app1\static\audios\Recording.m4a"
-output_file = "recording.wav"
+# input_file = r"C:\Users\hp\OneDrive\Documents\web_app1\static\audios\Recording.m4a"
+# output_file = "recording.wav"
 
-result = convert_to_wav(input_file, output_file)
+# result = convert_to_wav(input_file, output_file)
 
-if result:
-    print("Conversion was successful!")
-else:
-    print("Conversion failed.")
+# if result:
+#     print("Conversion was successful!")
+# else:
+#     print("Conversion failed.")
 
 if __name__=='__main__':
     convert_to_wav(input_file, output_file)

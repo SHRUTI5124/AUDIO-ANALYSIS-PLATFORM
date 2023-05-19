@@ -17,10 +17,10 @@ def noise_reduction(audio):
 
 if __name__ == '__main__':
     # mp3 to wav
-    fp = r'static\audios\relaxing-145038.mp3'
+    fp = r'static\audios\Recording.m4a'
     ep = convert_to_wav(fp, export_path='output_file.wav', export_format='wav')
     print(ep)
 
     # wav to mp3
-    fp = r'static\audios\CantinaBand3.wav'
+    fp = r'recording.wav'
     ep = convert_to_wav(fp, export_path='output_file.mp3', export_format='mp3')

@@ -3,7 +3,8 @@ import librosa
 import librosa.display
 import matplotlib.pyplot as plt
 
-def graph():              # Generate a sine wave with a frequency of 440 Hz and a duration of 1 second
+ # Generate a sine wave with a frequency of 440 Hz and a duration of 1 second
+def graph():           
     sampling_rate = 22050
     duration = 1
     frequency = 440
@@ -23,10 +24,8 @@ def graph():              # Generate a sine wave with a frequency of 440 Hz and 
     plt.title('Spectrogram of Audio Signal')
     plt.tight_layout()
     plt.show()
-<<<<<<< Updated upstream:graph1.py
     
-=======
-    
+    # Compute the MFCCs for the audio signal
 if __name__ == "__main__":
     graph()    
->>>>>>> Stashed changes:graph.py
+

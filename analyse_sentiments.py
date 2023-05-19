@@ -27,5 +27,5 @@ def analyse_sentiments(audio_file_path):
 
 
 if __name__ == "__main__":
-    analyse_sentiments(r'C:\Users\hp\OneDrive\Documents\web_app1\recording.wav')
+    analyse_sentiments(r'recording.wav')
 

@@ -2,62 +2,74 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    
-    <style>
-     *{
-      margin: 0;
-      padding: 0;
-      }
-      main{
-        width: 100%;
-        background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(/static/images/1.jpeg);
-        background-position: center;
-        background-size: cover;
-        height: 100%;
-      }
-      .col-md-10 mx-auto{
-        color:orange;
-      }
-    </style>
+  <title>Operations page</title>
+  <link rel="stylesheet" href="/static/css/oprstyle.css">
+  <script src="https://kit.fontawesome.com/8162d4da72.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
-    <header>
-        <!-- place navbar here -->
-    </header>
-    <main>
-        <div class="container">
-            <div class="row my-5">
-                <div class="col-md-10 mx-auto">
-                    <a href="/action/transcript/{{audio.id}}" class="btn btn-outline-dark">Transcript</a>
-                    <a href="/action/visualize/{{audio.id}}" class="btn btn-outline-dark">Visualize</a>
-                    <a href="/action/similarsearch/{{audio.id}}" class="btn btn-outline-dark">Comparison</a>
-                    <a href="/action/enhancement/{{audio.id}}" class="btn btn-outline-dark">Enhancement</a>
-                    <a href="/action/analizesentiment/{{audio.id}}" class="btn btn-outline-dark">Analyse Emotions</a>
-                    <a href="/action/classification/{{audio.id}}" class="btn btn-outline-dark">Verse and Choruses</a>
-                    <a href="/action/featureextraction/{{audio.id}}" class="btn btn-outline-dark">Feature Extraction</a>
-                    <a href="/action/noisereduction/{{audio.id}}" class="btn btn-outline-dark">Noise Reduction</a>
-                    <a href="/action/playback/{{audio.id}}" class="btn btn-outline-dark">Playback</a>
-                </div>
-            </div>
+ <div class="container">
+    <h1>OUR SERVICES</h1>
+    <div class="row">
+        <div class="service">
+            <i class="fa-solid fa-book-open-reader"></i>
+            <a href="transcript.html"><h2>Transcription</h2></a>
+            <P>
+                We help your audio transcend language with transcription.
+            </P>
         </div>
-    </main>
-    <footer>
-        <!-- place footer here -->
-    </footer>
-    <!-- Bootstrap JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-</script>
+        <div class="service">
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+            <a href="visualize.html"><h2>Visualization</h2></a>
+            <P>
+                Imagine the emotion attached to the outcome.
+            </P>
+        </div>
+        <div class="service">
+            <i class="fa-sharp fa-solid fa-code-compare"></i>
+            <a href="similarity.html"><h2>Similar Search</h2></a>
+            <P>
+                Giving you the best searching experience.
+            </P>
+        </div>
+        <div class="service">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <a href="enhance.html"><h2>Enhancement</h2></a>
+            <P>
+                Turn ordinary to extraordinary with Enhance.
+            </P>
+        </div>
+        <div class="service">
+            <i class="fa-regular fa-face-grin-beam"></i>
+            <a href="sentiment.html"><h2>Analyse Emotions</h2></a>
+            <P>
+                Your emotions are the slaves to your thoughts, and you are the slave to your emotions.
+            </P>
+        </div>
+        <div class="service">
+            <i class="fa-regular fa-music"></i>
+            <a href="segmentation.html"><h2>Verse and Choruses</h2></a>
+            <P>
+                Your happiness is our mission!.
+            </P>
+        </div>
+        <div class="service">
+            <i class="fa-regular fa-rss"></i>
+            <a href="featureextraction.html"><h2>Feature Extraction</h2></a>
+            <P>
+                From ordinary to extraordinary.
+            </P>
+        </div>
+        <div class="service">
+            <i class="fa-solid fa-microphone-lines-slash"></i>
+            <a href="noisereduction.html"><h2>Noise Reduction</h2></a>
+            <P>
+                Keep the noise down or the noise will keep you down.
+            </P>
+        </div>
+    </div>
+ </div>
 </body>
 
 </html>

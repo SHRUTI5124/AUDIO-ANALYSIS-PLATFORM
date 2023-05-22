@@ -35,5 +35,6 @@ def audio_enhancement(audio_file = r'static\audios\Recording.m4a'):         #to 
     enhanced_file = f'{audio_file[:-4]}_enhanced.wav'
     sf.write(enhanced_file, y, sr, subtype='PCM_24')
     return enhanced_file
+
 if __name__=='__main__':
     print(audio_enhancement())

@@ -4,7 +4,8 @@ import librosa
 audio_file = r'static\audios\CantinaBand3.wav'
 y, sr = librosa.load(audio_file)
 
-def feature_extraction():                    # Estimate the pitch
+def feature_extraction():                   
+     # Estimate the pitch
     pitch, _ = librosa.core.pitch.piptrack(y=y, sr=sr)
     estimated_pitch = librosa.core.pitch.pitch_frequencies(pitch, sr=sr)[0]
 

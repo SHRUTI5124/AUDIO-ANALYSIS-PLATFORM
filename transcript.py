@@ -4,7 +4,7 @@ import wave
 from pvcheetah import CheetahActivationLimitError, create
 
 audio_file = r"static\audios\sunrise-anna-li-sky-wav-8476.mp3"
-access_key='CY2mpNIhK3ELTKzVThK74D9Kntx2jVVnzLZ76XomnfWLqZH9CkLDPA=='
+access_key='gkoTjQkgydcu+1wfNpjc9sCXijHkrUEqRsvkwwO8SOsiz7C8IJ7Log=='
 #to transcript the audio file
 def transcript(wav_path):
     try:

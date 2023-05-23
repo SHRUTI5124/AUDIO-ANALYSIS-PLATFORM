@@ -10,7 +10,7 @@ from transcript import transcript as tscript
 from file_conversion import convert_to_wav
 from audio_enhancement import audio_enhancement
 from analyse_sentiments import analyse_sentiments
-from classification import classifications
+from classification import query as classifications
 from feature_extraction import feature_extraction
 from segmentation1 import segmentation
 from noise_reduction import noise_reduction
@@ -79,7 +79,7 @@ def operations(id):
     db = getdb()
     item = db.query(audio).filter_by(id=id).first()
     db.close()
-    return render_template('operations.html', title='Operations', audio=item)
+    return render_template('operations.html', title='Operations', audio=item, id=id)
 
 #transcript
 @app.route('/action/transcript/<int:id>', methods=['GET', 'POST'])
@@ -118,6 +118,12 @@ def sentiment(id):
     item = db.query(audio).filter_by(id=id).first()
     db.close()
     result = analyse_sentiments(item.audio_file)
+    if result == 0:
+        result = 'Nuetral'
+    elif result > 0:
+        result = 'Positive'
+    else:
+        result = 'Negative'
     return render_template('sentiment.html', title='Sentiment', audio=item, result=result)
 
 # classification

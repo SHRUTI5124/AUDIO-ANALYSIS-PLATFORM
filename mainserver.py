@@ -10,9 +10,7 @@ from transcript import transcript as tscript
 from file_conversion import convert_to_wav
 from audio_enhancement import audio_enhancement
 from analyse_sentiments import analyse_sentiments
-from classification import query as classifications
-from feature_extraction import feature_extraction
-from segmentation1 import segmentation
+from classification import query as query
 from noise_reduction import noise_reduction
 from wav_playback import playback
 
@@ -35,6 +33,17 @@ def home():
 @app.route('/about')
 def about():
     return render_template('About1.html')
+
+# registrartion 
+@app.route('/registration', methods=['GET','POST'])
+def register():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        email = request.form.get('email')
+        password = request.form.get('password')
+        print(username, email, password)
+        return redirect(url_for('home'))
+    return render_template('registration.html')
 
 # upload audio
 @app.route('/audio/add', methods=['GET', 'POST'])
@@ -132,7 +141,7 @@ def classify(id):
     db = getdb()
     item = db.query(audio).filter_by(id=id).first()
     db.close()
-    result = classifications(item.audio_file)
+    result = query(item.audio_file)
     return render_template('classify.html', title='Classification', audio=item, result=result)
 
 #similarity search
@@ -151,24 +160,6 @@ def fileconversion(id):
     item = db.query(audio).filter_by(id=id).first()
     db.close()
     return render_template('fileconversion.html', title='File Conversion', audio=item)
-
-#feature extraction
-@app.route('/action/featureextraction/<int:id>', methods=['GET', 'POST'])
-def featureextraction(id):
-    db = getdb()
-    item = db.query(audio).filter_by(id=id).first()
-    db.close()
-    result = feature_extraction(item.audio_file)
-    return render_template('featureextraction.html', title='Feature Extraction', audio=item, result=result)
-
-#segmentation
-@app.route('/action/segmentation/<int:id>', methods=['GET', 'POST'])
-def segmentation(id):
-    db = getdb()
-    item = db.query(audio).filter_by(id=id).first()
-    db.close()
-    result = segmentation(item.audio_file)
-    return render_template('segmentation.html', title='Segmentation', audio=item, result=result)
 
 #noise reduction
 @app.route('/action/noisereduction/<int:id>', methods=['GET', 'POST'])
@@ -189,4 +180,4 @@ def playback(id):
 
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=8000, debug=False)
+  app.run(host='0.0.0.0', port=8000, debug=True)

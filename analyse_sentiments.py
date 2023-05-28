@@ -22,10 +22,9 @@ def analyse_sentiments(audio_file_path):
     sentiment = blob.sentiment.polarity
     subjectivity = blob.sentiment.subjectivity
 
-    print(sentiment, subjectivity)
-    return sentiment
+    return sentiment , subjectivity
 
 
 if __name__ == "__main__":
-    analyse_sentiments(r'recording.wav')
+   analyse=print( analyse_sentiments(r'recording.wav'))
 

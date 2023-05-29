@@ -26,5 +26,6 @@ def analyse_sentiments(audio_file_path):
 
 
 if __name__ == "__main__":
-   analyse=print( analyse_sentiments(r'recording.wav'))
+   analyse= analyse_sentiments(r'recording.wav')[0]
+   print(analyse)
 

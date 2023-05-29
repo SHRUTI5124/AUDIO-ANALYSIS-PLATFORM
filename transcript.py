@@ -31,7 +31,7 @@ def transcript(wav_path):
             print(partial_transcript, end='', flush=True)
             transcript += partial_transcript
         final_transcript = o.flush()
-        return final_transcript
+        return transcript
     except CheetahActivationLimitError:
         print("Activation limit reached")
     except Exception as e:

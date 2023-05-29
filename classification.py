@@ -12,4 +12,4 @@ def query(filename=r'static\generated\output_file.mp3'):
 
 if __name__ == '__main__':
     #to access the query function
-         result=print(query())
+    result=print(query())

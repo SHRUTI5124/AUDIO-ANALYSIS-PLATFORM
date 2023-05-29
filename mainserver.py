@@ -13,6 +13,7 @@ from analyse_sentiments import analyse_sentiments
 from classification import query as query
 from noise_reduction import noise_reduction
 from wav_playback import playback
+import librosa
 
 app = Flask(__name__)
 app.secret_key = "Secret Key"
@@ -96,6 +97,11 @@ def transcript(id):
     db = getdb()
     item = db.query(audio).filter_by(id=id).first()
     db.close()
+    if item.audio_file.split('.')[-1] != 'wav':
+        filepath = 'static/uploads/'+item.audio_file
+        wavname = filepath.split('.')[0] + '.wav'
+    else:
+        wavname = item.audio_file
     result = tscript(item.audio_file)
     return render_template('transcript.html', title='Transcript', audio=item, result=result)
 
@@ -126,15 +132,24 @@ def sentiment(id):
     db = getdb()
     item = db.query(audio).filter_by(id=id).first()
     db.close()
-    result = analyse_sentiments(item.audio_file)
-    if result == 0:
-        result = 'Nuetral'
-    elif result > 0:
-        result = 'Positive'
+    if item.audio_file.split('.')[-1] != 'wav':
+        filepath = 'static/uploads/'+item.audio_file
+        wavname = filepath.split('.')[0] + '.wav'
     else:
-        result = 'Negative'
-    return render_template('sentiment.html', title='Sentiment', audio=item, result=result)
-
+        wavname = item.audio_file
+    print(f'wavname: {wavname}')
+    try:
+        result = analyse_sentiments(wavname)[0]
+        if result == 0:
+            result = 'Nuetral'
+        elif result > 0:
+            result = 'Positive'
+        else:
+            result = 'Negative'
+        return render_template('sentiment.html', title='Sentiment', audio=item, result=result)
+    except Exception as e:
+        print(e)
+        return render_template('sentiment.html', title='Sentiment', audio=item, result='No Transcript')
 # classification
 @app.route('/action/classify/<int:id>', methods=['GET', 'POST'])
 def classify(id):
@@ -142,16 +157,24 @@ def classify(id):
     item = db.query(audio).filter_by(id=id).first()
     db.close()
     result = query(item.audio_file)
-    return render_template('classify.html', title='Classification', audio=item, result=result)
+    return render_template('classification.html', title='Classification', audio=item, result=result)
 
 #similarity search
 @app.route('/action/similarity/<int:id>', methods=['GET', 'POST'])
 def similarity(id):
     db = getdb()
     item = db.query(audio).filter_by(id=id).first()
+    items = db.query(audio).all()
     db.close()
-    result = similar_search(item.audio_file)
-    return render_template('similarity.html', title='Similarity', audio=item, result=result)
+    results = []
+    for i in items:
+        if i.id != id:
+            # only wav
+            if i.audio_file.split('.')[-1] == 'wav':
+                a = librosa.load(item.audio_file)[0]
+                b = librosa.load(i.audio_file)[0]
+                results.append(similar_search(a,b).to_html(width=1000, height=500))
+    return render_template('similarity.html', title='Similarity', audio=item, results=results,len=len(results))
 
 #fileconversion
 @app.route('/action/fileconversion/<int:id>', methods=['GET', 'POST'])
@@ -167,8 +190,14 @@ def noisereduction(id):
     db = getdb()
     item = db.query(audio).filter_by(id=id).first()
     db.close()
-    result = noise_reduction(item.audio_file)
-    return render_template('noisereduction.html', title='Noise Reduction', audio=item, result=result)
+    if item.audio_file.split('.')[-1] != 'wav':
+        filepath = 'static/uploads/'+item.audio_file
+        wavname = filepath.split('.')[0] + '.wav'
+    else:
+        wavname = item.audio_file
+    output = 'static/generated/noiseless_file.wav'
+    noise_reduction(wavname,output)
+    return render_template('noisereduction.html', title='Noise Reduction', audio=item, output=output)
 
 #playback
 @app.route('/action/playback/<int:id>', methods=['GET', 'POST'])
@@ -180,4 +209,4 @@ def playback(id):
 
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=8000, debug=True)
+  app.run(host='0.0.0.0', port=8000, debug=False)

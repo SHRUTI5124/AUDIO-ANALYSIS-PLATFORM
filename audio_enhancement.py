@@ -39,4 +39,5 @@ def audio_enhancement(audio_file = r'static\audios\Recording.m4a', save_location
     return enhanced_file
 
 if __name__=='__main__':
-    result=print(audio_enhancement())
+    result=audio_enhancement()
+    print(result)

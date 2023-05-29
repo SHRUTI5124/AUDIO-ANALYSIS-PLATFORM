@@ -18,6 +18,7 @@ def similar_search(audio_file1, audio_file2):         # Extract features from th
 
     fig = px.imshow(similarity, color_continuous_scale='gray')
     fig.update_layout(title=f'Similarity between the two audio files mean={mean:.2f}, std={std:.2f}')
+    
     return fig
 
 

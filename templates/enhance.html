@@ -3,16 +3,17 @@
 
 <head>
   <title>Enhancement</title>
-  <link rel="stylesheet" href="/static/css/classsificationstyle.css">
+
 
 </head>
 
 <body>
   <main>
     <div class="container">
+      <h2>Audio Enhancement</h2>
       <div class="row my-5">
           <div class="col-md-8">
-              {{result|safe}}
+              <audio src="/{{enhanced_file}}" controls></audio>
           </div>
       </div>
   </div>

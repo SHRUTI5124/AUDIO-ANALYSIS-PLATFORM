@@ -15,7 +15,11 @@
 
 <body>
   <main>
-
+    {{audio}}
+    {% for fig in results %}
+        {{ fig|safe }}
+    {% endfor %}
+    
   </main>
   <footer>
     <!-- place footer here -->

@@ -4,7 +4,7 @@
     box-sizing:border-box;
     font-family:'popins',  sans-serif;
 }
-.container{
+body{
     width: 100%;
     background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(/static/images/1.jpeg);
     background-position: center;

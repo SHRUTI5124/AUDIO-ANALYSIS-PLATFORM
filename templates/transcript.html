@@ -3,20 +3,30 @@
 
 <head>
   <title>Transcription</title>
-  <link rel="stylesheet" href="/static/css/transcript.css">
+  <link rel="stylesheet" href="/static/css/page.css">
+  <link rel="stylesheet" href="/static/css/style.css">
 </head>
 
 <body>
   <main>
+    <div class="navbar">
+      <div class="icon">
+          <h2 class="logo">AuSis</h2>
+      </div>
+      
+     {% include "navbar.html" %}
+      
+      <div class="search">
+          <input class="srch" type="search" name="" placeholder="Type To text">
+          <a href="#"> <button class="btn">Search</button></a>
+      </div>
+      
+  </div> 
 <div class="container">
-  <h1>TRANSLITERATION OF AUDIO</h1>
-  </div class="result">
-    <div class="row my-5">
-        <div class="col-md-8">
+  <h1>TRANSLITERATION OF AUDIO</h1><br>
+  <div class="result">
             {{result}}
-        </div>
-    </div>
-  </div>    
+  </div>
 </div>
   </main>
 </body>

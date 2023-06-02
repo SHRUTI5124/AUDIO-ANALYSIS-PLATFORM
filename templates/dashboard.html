@@ -3,64 +3,44 @@
 
 <head>
     <title>User Dashboard</title>
-    <style type="text/css">
-        body{
-            width: 100%;
-            background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(/static/images/1.jpeg);
-            background-position: center;
-            background-size: cover;
-            height: 100vh;
-            padding: 0%;
-            color:#fff;
-        }
-        .container-fluid {
-            padding: 0;
-        }
-        .card {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-
-        .card-header {
-            background-color: transparent;
-            padding: 10px 15px;
-            border-bottom: 1px solid transparent;
-            color:#fff
-        }
-
-        .card-body {
-            padding: 10px 15px;
-        }
-
-        .card-footer {
-            background-color:transparent;
-            padding: 10px 15px;
-            border-top: 1px solid #ccc;
-        }
-    </style>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/dashboard.css">
 </head>
 
 <body>
     <main>
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">AuSis</h2>
+            </div>
+            
+           {% include "navbar.html" %}
+            
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder="Type To text">
+                <a href="#"> <button class="btn">Search</button></a>
+            </div>
+            
+        </div> 
         <div class="container">
-            <div class="row my-5">
-                <div class="col-md-6 mx-auto">
+            <h1 align="center">USER DASHBOARD</h1>
+            <div class="row my-10">
+                <div class="col-md-5 mx-auto">
                     <div class="container-fluid">
                         <div class="row">
                             {% for item in audios %}
                             <div class="col-md-5 mb-3">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h6>{{item.name}}</h6>
+                                        <h6 >{{item.name}}</h6>
                                     </div>
                                 <div class="card-body">
-                                    <audio controls>
+                                    <audio controls >
                                         <source src="{{item.audio_file}}" type="audio/mpeg">
                                     </audio>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="/audio/operations/{{item.id}}" class="btn btn-primary">Operations</a>
+                                    <button class="cn"><a href="/audio/operations/{{item.id}}">Operations</a></button>
                     
                                 </div>
                             </div>

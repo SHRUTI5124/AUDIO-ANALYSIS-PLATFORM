@@ -4,11 +4,28 @@
 <head>
   <title>Similar searches</title>
   <link rel="stylesheet" href="/static/css/page.css">
+  <link rel="stylesheet" href="/static/css/style.css">
 
 </head>
 
 <body>
   <main>
+    <div class="navbar">
+      <div class="icon">
+          <h2 class="logo">AuSis</h2>
+      </div>
+      
+     {% include "navbar.html" %}
+      
+      <div class="search">
+          <input class="srch" type="search" name="" placeholder="Type To text">
+          <a href="#"> <button class="btn">Search</button></a>
+      </div>
+      
+  </div> 
+   <div>
+    <h2 align="center">Similar searches across the audio files</h2>
+   </div>
     {{audio}}
     {% for fig in results %}
         {{ fig|safe }}

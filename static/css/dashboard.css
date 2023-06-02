@@ -1,0 +1,53 @@
+body{
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(/static/images/1.jpeg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    padding: 0%;
+    color:#fff;
+}
+.container-fluid {
+    padding: 0;
+}
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: transparent;
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    color:#fff;
+    font-size: 28px;
+}
+
+.card-body {
+    padding: 10px 15px;
+    color:#fff;
+
+}
+
+.card-footer button{
+    width: 160px;
+    height: 40px;
+    background: #ff7200;
+    border: none;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .4s ease;
+}
+.card-footer .cn a{
+    text-decoration: none;
+    color: #000;
+    transition: .3s ease;
+}
+
+.cn:hover{
+    background-color: #fff;
+}

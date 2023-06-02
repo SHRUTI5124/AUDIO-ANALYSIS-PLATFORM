@@ -4,13 +4,32 @@
 <head>
   <title>Noise Reduction</title>
   <link rel="stylesheet" href="/static/css/page.css">
-
+  <link rel="stylesheet" href="/static/css/style.css">
 </head>
 
 <body>
   <main>
-      <audio src="/static/uploads/{{audio}}" controls></audio>
-      <audio src="/{{output}}" controls></audio>
+    <div class="navbar">
+      <div class="icon">
+          <h2 class="logo">AuSis</h2>
+      </div>
+      
+     {% include "navbar.html" %}
+      
+      <div class="search">
+          <input class="srch" type="search" name="" placeholder="Type To text">
+          <a href="#"> <button class="btn">Search</button></a>
+      </div>
+      
+  </div> 
+    <div class="container">
+      <h1>Reduction of Noise </h1>
+      <div class="result">
+        <h2><b> Audio:</b></h2>
+      <br><audio src="/static/uploads/{{audio}}" controls></audio><br>
+      <br><h2><b> Noiseless Audio:</b></h2>
+      <br><audio src="/{{output}}" controls></audio>
+      </div>
   </main>
 </body>
 

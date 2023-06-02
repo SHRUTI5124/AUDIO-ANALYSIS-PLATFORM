@@ -15,8 +15,7 @@ body{
 }
 .container h1{
     text-align: center;
-    padding-top: 10%;
-    margin-top: 60px;
+    padding-top: 2%;
     font-weight: 600;
     position: relative;
 }
@@ -32,7 +31,24 @@ body{
 }
 .result{
     text-align: center;
+    padding: 25px;
+    border-radius: 10px;
+    font-size: 28px;
+    cursor: pointer;
+    background: transparent;
+    transition: transform 0.5s , background 0.5s;
+    color:#fff;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .matter{
+    padding: 25px;
+    border-radius: 10px;
     font-size: 20px;
-    font-weight: 600;
-    margin-top: 20px;
+    cursor: pointer;
+    background: transparent;
+    transition: transform 0.5s , background 0.5s;
+    color:#fff;
+    margin-left: 10px;
+    margin-right: 10px;
   }

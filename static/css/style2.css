@@ -11,7 +11,11 @@ body{
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #424141;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(/static/images/1.jpeg);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
 }
 
 ::selection{

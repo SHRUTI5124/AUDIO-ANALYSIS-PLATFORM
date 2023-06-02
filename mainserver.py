@@ -141,11 +141,11 @@ def sentiment(id):
     try:
         result = analyse_sentiments(wavname)[0]
         if result == 0:
-            result = 'Nuetral'
+            result = '🙂🙂Nuetral🙂🙂'
         elif result > 0:
-            result = 'Positive'
+            result = '😊😊Positive😊😊'
         else:
-            result = 'Negative'
+            result = '🙄🙄Negative🙄🙄'
         return render_template('sentiment.html', title='Sentiment', audio=item, result=result)
     except Exception as e:
         print(e)
@@ -173,7 +173,7 @@ def similarity(id):
             if i.audio_file.split('.')[-1] == 'wav':
                 a = librosa.load(item.audio_file)[0]
                 b = librosa.load(i.audio_file)[0]
-                results.append(similar_search(a,b).to_html(width=1000, height=500))
+                results.append(similar_search(a,b).to_html())
     return render_template('similarity.html', title='Similarity', audio=item, results=results,len=len(results))
 
 #fileconversion

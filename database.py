@@ -8,7 +8,7 @@ Base = declarative_base()
 class audio(Base):
     __tablename__ = 'audio'
     id = Column(Integer, primary_key=True)
-    # uid = Column(Integer, ForeignKey('user.uid'))
+    #uid = Column(Integer, ForeignKey('user.uid'))
     name = Column(String(250), nullable=False)
     audio_file = Column(String(250), nullable=False)
     date = Column(DateTime, default=datetime.utcnow)
@@ -19,10 +19,10 @@ class audio(Base):
 class user(Base):
     __tablename__ = 'user'
     uid = Column(Integer, primary_key=True)
-    user_id = Column(String(250), nullable=False)
+    user_name = Column(String(250), nullable=False)
     email = Column(String(250), nullable=False)
     password = Column(String(250), nullable=False)
-    
+    date = Column(DateTime, default=datetime.utcnow)
 
     def __str__(self):
         return self.name   

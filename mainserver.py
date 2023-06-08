@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 import plotly.express as px
 from database import audio
+from dputils import *
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 from werkzeug.utils import secure_filename
@@ -42,8 +43,19 @@ def register():
         username = request.form.get('username')
         email = request.form.get('email')
         password = request.form.get('password')
-        print(username, email, password)
-        return redirect(url_for('home'))
+        if username and len(username) >=3:
+            if email and '@' in email:
+                if password and len(password) >=6:
+                    db=getdb()
+                    db.add(user(user_name='username',email=email,password=password))
+                    db.commit()
+                    flash('User registered successfully', 'success')
+                    return redirect(url_for('home'))
+                else:
+                    flash('Invalid password', 'danger')
+            else:
+                flash('Invalid email', 'danger')
+        
     return render_template('registration.html')
 
 # upload audio

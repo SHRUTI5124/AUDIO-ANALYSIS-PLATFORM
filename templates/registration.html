@@ -16,16 +16,16 @@
             <img src="/static/images/gp.png">
             <img src="/static/images/tw.png">
         </div>
-        <form id="login" class="input-group">
-          <input type="text" class="input-field" placeholder="User Name" required>
-          <input type="text" class="input-field" placeholder="Password" required>
+        <form id="login" class="input-group" method="POST">
+          <input type="text" class="input-field" placeholder="User Name" required name="username" id="username">
+          <input type="text" class="input-field" placeholder="Password" required name="Password" id="Password">
           <input type="checkbox" class="check-box"><span>Remember Password</span>
           <button type="submit" class="submit-btn">Log In</button>
         </form>
-        <form id="register" class="input-group">
-          <input type="text" class="input-field" placeholder="User Name" required>
-          <input type="email" class="input-field" placeholder="Email Id" required>
-          <input type="text" class="input-field" placeholder="Password" required>
+        <form id="register" class="input-group" method="POST">
+          <input type="text" class="input-field" placeholder="User Name" required name="username" id="username">
+          <input type="email" class="input-field" placeholder="Email Id" required name="email" id="email">
+          <input type="text" class="input-field" placeholder="Password" required name="Password" id="Password">
           <input type="checkbox" class="check-box"><span>I agree to the terms & condtions</span>
           <button type="submit" class="submit-btn">Register</button>
         </form>
